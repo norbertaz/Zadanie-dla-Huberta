@@ -16,7 +16,7 @@ const App = () => {
         <Route path='/Pokemons'> <Pokemons/> </Route>
         <Route path='/Timer'> <Timer/> </Route>
         <Route path='/ToDo'> <ToDo/> </Route>
-        <Route path='/#'> <Page404/> </Route>
+        <Route> <Page404/> </Route>
       </Switch>
     </Router>
   );

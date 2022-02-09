@@ -4,42 +4,33 @@ import '../styles/PokemonsStyles.css'
 
 
 const Pokemons = () => {
-        const [pokemons, setPokemons] = useState([])
         const [pokemonIndex, setPokemonIndex] = useState(1)
-        const [pokemonName, setPokemonName] = useState('')
-        const [pokemonWeight, setPokemonWeight] = useState()
-        const [pokemonAbilities, setPokemonAbilities] = useState([])
+        const [pokemonsData, setPokemonsData] = useState([])
         
         
-         const API_URL=`https://pokeapi.co/api/v2/pokemon`
-         const SEC_API=`https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`
-         useEffect(() => {
+        const API_URL=`https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`
+        useEffect(()=>{
+                if(pokemonIndex<=20){
                 fetch(API_URL)
                 .then(res => res.json())
                 .then( data => {
-                        setPokemons(data.results)
+                        setPokemonsData([...pokemonsData, data])
                 })
-                
-        },[])
-        // setInterval(()=>{
-        //         setPokemonIndex(pokemonIndex + 1)
-        // },1000)
-        useEffect(()=>{
-                fetch(SEC_API)
-                .then(res => res.json())
-                .then( data => {
-                        setPokemonWeight(data.weight)
-                        setPokemonAbilities(data.abilities)
-                })
-                console.log(pokemonAbilities)
-        },[pokemonWeight])
-        
+                setPokemonIndex(pokemonIndex + 1)
+                }
+        },[pokemonsData])
+
+console.log( pokemonsData)
         return(
                 <div className="pokemons-list">
-                        {pokemons.map(({name,url})=> (
-                                <div className="pokemon" key={url}>
-                                        {name}
-                                        <p>Waga: {pokemonWeight}</p>
+                        {pokemonsData.map(({name, id, weight, abilities,sprites})=> (
+                                <div className="pokemon" key={id} style={{backgroundImage: `url(${sprites.front_default}`}}>      
+                                <div className="pokemon-info">
+                                        <p>{name}</p>
+                                        <p>id: {id}</p>
+                                        <p>Waga: {weight} </p>
+                                        <p>Umiejętności: {abilities.map(abilitiesObject => abilitiesObject.ability.name).join(', ')}</p>
+                                </div>
                                 </div>
                         ))}
                 </div>

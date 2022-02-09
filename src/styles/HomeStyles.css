@@ -10,6 +10,9 @@ body{
     align-items: center;
     min-height: 100vh;
 }
+.container{
+    position: relative;
+}
 .carousel{
     height: 500px;
     width: 500px;
@@ -18,9 +21,22 @@ body{
 }
 .image-container {
     display: flex;
+    
 }
 img{
     height: 500px;
     width: 500px;
     object-fit: cover;
+    
+}
+.right-arrow,
+.left-arrow{
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+}
+.right-arrow{
+    right:0
 }
