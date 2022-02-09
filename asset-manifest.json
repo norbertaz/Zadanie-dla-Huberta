@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/zadanie-dla-huberta/static/css/main.0f67f3c9.css",
+    "main.js": "/zadanie-dla-huberta/static/js/main.8a7b2017.js",
+    "index.html": "/zadanie-dla-huberta/index.html",
+    "main.0f67f3c9.css.map": "/zadanie-dla-huberta/static/css/main.0f67f3c9.css.map",
+    "main.8a7b2017.js.map": "/zadanie-dla-huberta/static/js/main.8a7b2017.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f67f3c9.css",
+    "static/js/main.8a7b2017.js"
+  ]
+}
