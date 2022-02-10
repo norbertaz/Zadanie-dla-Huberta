@@ -1,8 +1,6 @@
 import React, {useState} from "react";
-import {FaArrowAltCircleRight, FaArrowAltCircleLeft} from 'react-icons/fa'
 
-
-
+import {Container, Carousel, ImageContainer, ArrowLeft, ArrowRight} from '../StyledComponents/Home.styled'
 
 
 const Home = () => {
@@ -34,9 +32,9 @@ const Home = () => {
     }
     console.log(currentImage)
     return(
-        <div className="container">
-            <div className="carousel">
-                <div className="img-container">
+        <Container>
+            <Carousel>
+                <ImageContainer>
                     {imagesURL.map((image, index) => (
                         <div
                         className={index === currentImage ? 'visible-image' : 'hidden-image'}
@@ -48,12 +46,12 @@ const Home = () => {
                         </div>
                         // 
                     ))}
-                </div>
+                </ImageContainer>
                 
-            </div>
-            <FaArrowAltCircleLeft className="left-arrow" onClick={prevImage}/>
-            <FaArrowAltCircleRight className="right-arrow"onClick={nextImage}/>
-        </div>
+            </Carousel>
+            <ArrowLeft onClick={prevImage}/>
+            <ArrowRight onClick={nextImage}/>
+        </Container>
 
 )}
 

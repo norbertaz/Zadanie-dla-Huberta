@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-
-import '../styles/TimerStyles.css'
-
+import {Button, TimeWrapper} from '../StyledComponents/Timer.styled'
 
 const Timer = () => {
     const [timerOn, setTimerOn] = useState (false);
@@ -35,15 +33,12 @@ const Timer = () => {
     }
 
     return (
-        <div className="timer-wrapper">
-            <div className="time">{seconds}.{milliseconds}</div>
-            <div className="btn-wrapper">
-                <button className="start" onClick={()=> setTimerOn(true)}>Start</button>
-                <button className="stop" onClick={()=> setTimerOn(false)}>Stop</button>
-                <button className="reset" onClick={handleReset}>Reset</button>
-            </div>
-
-        </div>
+        <TimeWrapper>
+            <p>{seconds}.{milliseconds}</p>
+            <Button bg="#0f0" onClick={()=> setTimerOn(true)}>Start</Button>
+            <Button bg="#f00" onClick={()=> setTimerOn(false)}>Stop</Button>
+            <Button bg="#f00" onClick={handleReset}>Reset</Button>
+        </TimeWrapper>
     )
 }
 

@@ -1,14 +1,13 @@
-.pokemons-list{
+import styled from "styled-components";
+
+export const PokemonsList = styled.div`
     width: 90vw;
-    /* height: 50vh; */
     margin-top: 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
-}
-
-.pokemon{
+`
+export const Pokemon = styled.div`
     height: 200px;
     flex-basis: 10%;
     display: inline-block;
@@ -17,9 +16,10 @@
     text-align: center;
     background-repeat: no-repeat;
     background-position: center top;
-    
-}
-.pokemon-info{
+
+    background-image: url(${props => props.image})
+`
+export const PokemonInfo = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -27,4 +27,4 @@
     padding-bottom: 5px;
     font-family: sans-serif;
     text-transform: capitalize;
-}
+`

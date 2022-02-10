@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-import '../styles/PokemonsStyles.css'
+import { PokemonsList, Pokemon, PokemonInfo } from "../StyledComponents/Pokemons.styled";
 
 
 const Pokemons = () => {
@@ -20,20 +20,19 @@ const Pokemons = () => {
                 }
         },[pokemonsData])
 
-console.log( pokemonsData)
         return(
-                <div className="pokemons-list">
+                <PokemonsList>
                         {pokemonsData.map(({name, id, weight, abilities,sprites})=> (
-                                <div className="pokemon" key={id} style={{backgroundImage: `url(${sprites.front_default}`}}>      
-                                <div className="pokemon-info">
+                                <Pokemon key={id} image={sprites.front_default}>      
+                                <PokemonInfo>
                                         <p>{name}</p>
                                         <p>id: {id}</p>
                                         <p>Waga: {weight} </p>
                                         <p>Umiejętności: {abilities.map(abilitiesObject => abilitiesObject.ability.name).join(', ')}</p>
-                                </div>
-                                </div>
+                                </PokemonInfo>
+                                </Pokemon>
                         ))}
-                </div>
+                </PokemonsList>
 )}
 
 export default Pokemons

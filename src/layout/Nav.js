@@ -2,18 +2,18 @@ import React from "react"
 import {Link} from 'react-router-dom'
 
 
-import '../styles/NavStyles.css'
-
+// import '../styles/NavStyles.css'
+import { NavBar, Ul, Li } from "../StyledComponents/Navigation.styled"
 
 const Nav = () => (
-    <nav>
-            <ul>
-                <li><Link to="/" exact>Home</Link></li>
-                <li><Link to="/Timer">Timer</Link></li>
-                <li><Link to="/ToDo">ToDo</Link></li>
-                <li><Link to="/Pokemons">Pokemons</Link></li>
-            </ul>
-        </nav>
+    <NavBar>
+        <Ul>
+            <Li><Link to="/" exact>Home</Link></Li>
+            <Li><Link to="/Timer">Timer</Link></Li>
+            <Li><Link to="/ToDo">ToDo</Link></Li>
+            <Li><Link to="/Pokemons">Pokemons</Link></Li>
+        </Ul>
+    </NavBar>
 )
 
 export default Nav

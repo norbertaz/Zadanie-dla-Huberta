@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 
-import '../styles/TodoStyles.css'
+import {Button} from '../StyledComponents/Timer.styled'
+import {Form, Input, Todos, SortingWrapper,SortingButton} from '../StyledComponents/Todo.styled'
 
 
 const ToDo = () => {
@@ -17,7 +18,6 @@ const ToDo = () => {
             date: new Date(),
             sorted: sortedByOldest,
         }
-        console.log(newTodo.Date)
         setTodos([...todos].concat(newTodo))
         setSingleTodo('')
     }
@@ -37,20 +37,20 @@ const ToDo = () => {
     }
     return(
         <>
-            <form onSubmit={handleSubmit}>
-                <div className="sort-wrapper">
-                    <div className="desc" onClick={handleDescSort}>Sortuj od najnowszego</div>
-                    <div className="asc" onClick={handleAscSort}>Sortuj od najstarszego</div>
-                </div>
-                <input type='text' value={singleTodo} onChange={e => setSingleTodo(e.target.value)} />
-                <button className="submit-btn" type='submit'>Dodaj</button>
-            </form>
+            <Form onSubmit={handleSubmit}>
+                <SortingWrapper>
+                    <SortingButton onClick={handleDescSort}>Sortuj od najnowszego</SortingButton>
+                    <SortingButton onClick={handleAscSort}>Sortuj od najstarszego</SortingButton>
+                </SortingWrapper>
+                <Input type='text' value={singleTodo} onChange={e => setSingleTodo(e.target.value)} />
+                <Button bg="#adff2f" ml="15px" type='submit'>Dodaj</Button>
+            </Form>
             <div className="todo-wrapper">
                 {todos.map(todo => (
-                    <div className="todo" key={todo.id}>
-                        <div>{todo.text}</div>
-                        <button className="delete" onClick={()=> deleteTodo(todo.id)}>Usuń</button>
-                    </div>
+                    <Todos key={todo.id}>
+                        <h3>{todo.text}</h3>
+                        <Button onClick={()=> deleteTodo(todo.id)}>Usuń</Button>
+                    </Todos>
                 ))}
             </div>
         </>
