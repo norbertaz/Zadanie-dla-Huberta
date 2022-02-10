@@ -1,13 +1,10 @@
 {
   "files": {
-    "main.css": "/Zadanie-dla-Huberta/static/css/main.0f67f3c9.css",
-    "main.js": "/Zadanie-dla-Huberta/static/js/main.f3b6d72e.js",
+    "main.js": "/Zadanie-dla-Huberta/static/js/main.d7c78290.js",
     "index.html": "/Zadanie-dla-Huberta/index.html",
-    "main.0f67f3c9.css.map": "/Zadanie-dla-Huberta/static/css/main.0f67f3c9.css.map",
-    "main.f3b6d72e.js.map": "/Zadanie-dla-Huberta/static/js/main.f3b6d72e.js.map"
+    "main.d7c78290.js.map": "/Zadanie-dla-Huberta/static/js/main.d7c78290.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f67f3c9.css",
-    "static/js/main.f3b6d72e.js"
+    "static/js/main.d7c78290.js"
   ]
 }
